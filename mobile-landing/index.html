@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <style>
         @import url('fonts/EurekaSansPro-Regular.css');
         html,
@@ -45,10 +46,12 @@
             from {
                 opacity: 0;
                 transform: translate3d(0, -30px, 0);
+                -webkit-transform: translate3d(0, -30px, 0);
             }
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
         }
         
@@ -56,10 +59,12 @@
             from {
                 opacity: 0;
                 transform: translate3d(0, -30px, 0);
+                -webkit-transform: translate3d(0, -30px, 0);
             }
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
         }
         
@@ -102,10 +107,12 @@
             from {
                 opacity: 0;
                 transform: translate3d(0, -30px, 0);
+                -webkit-transform: translate3d(0, -30px, 0);
             }
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
         }
         
@@ -113,10 +120,12 @@
             from {
                 opacity: 0;
                 transform: translate3d(0, -30px, 0);
+                -webkit-transform: translate3d(0, -30px, 0);
             }
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
         }
         
@@ -132,10 +141,12 @@
             from {
                 opacity: 0;
                 transform: translate3d(0, -30px, 0);
+                -webkit-transform: translate3d(0, -30px, 0);
             }
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
         }
         
@@ -143,10 +154,12 @@
             from {
                 opacity: 0;
                 transform: translate3d(0, -30px, 0);
+                -webkit-transform: translate3d(0, -30px, 0);
             }
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
         }
         
@@ -163,16 +176,25 @@
             outline: none;
             animation: 0.4s button 1;
             -webkit-animation: 0.4s button 1;
+            text-align: left;
+            white-space: nowrap;
+        }
+        
+        button.web {
+            padding: 10px 20px;
+            margin: 5px;
         }
         
         @-webkit-keyframes button {
             from {
                 opacity: 0;
                 transform: translate3d(0, 40px, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
         }
         
@@ -180,10 +202,12 @@
             from {
                 opacity: 0;
                 transform: translate3d(0, 40px, 0);
+                -webkit-transform: translate3d(0, 40px, 0);
             }
             to {
                 opacity: 1;
                 transform: translate3d(0, 0, 0);
+                -webkit-transform: translate3d(0, 0, 0);
             }
         }
         
@@ -193,6 +217,18 @@
         
         button:active {
             background: #18B1BB;
+        }
+        
+        button i {
+            font-size: 40px !important;
+            margin-right: 10px;
+            float:left;
+        }
+        
+        button span {
+            font-size: 14px;
+            display: block;
+            margin-left: 40px;
         }
         
         p {
@@ -211,14 +247,20 @@
     </div>
     <h1>Women with no socks</h1>
     <h2>Dave McClure</h2>
-    <button>Open App</button>
+    <button class="mobile">Open App</button>
+    <button class="web"><i class="fa fa-apple"></i><span>Download From</span>App Store</button>
+    <button class="web"><i class="fa fa-play"></i><span>Download From</span>Play Store</button>
     <p>Start chat with Dave McClure anonymously!</p>
-    
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="js/mobiledetect.js"></script>
-    
+
     <script>
-        alert(mobileAndTabletcheck());
+        if (!mobileAndTabletcheck()) {
+            $(".mobile").hide();
+        } else {
+            $(".web").hide();
+        }
     </script>
 </body>
 
